@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.asstmngm.assetmanagement.MenuController">
+   <children>
+      <Label fx:id="logoLabel" text="ASSET MANAGEMENT SYSTEM">
+         <font>
+            <Font size="50.0" />
+         </font>
+         <VBox.margin>
+            <Insets top="100.0" />
+         </VBox.margin>
+      </Label>
+      <GridPane alignment="CENTER" prefHeight="400.0" prefWidth="1080.0">
+        <columnConstraints>
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="150.0" minHeight="10.0" prefHeight="140.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="150.0" minHeight="10.0" prefHeight="140.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button fx:id="displayEntryButton" mnemonicParsing="false" onAction="#displayEntryButtonAction" prefHeight="70.0" prefWidth="200.0" text="Display Entries">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Button fx:id="newEntryButton" mnemonicParsing="false" onAction="#newEntryButtonAction" prefHeight="70.0" prefWidth="200.0" text="New Entry" GridPane.columnIndex="1">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Button fx:id="deleteEntryButton" mnemonicParsing="false" onAction="#deleteEntryButtonAction" prefHeight="70.0" prefWidth="200.0" text="Delete Entry" GridPane.columnIndex="2">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="searchEntryButton" mnemonicParsing="false" onAction="#searchEntryButtonAction" prefHeight="70.0" prefWidth="200.0" text="Search Entries" GridPane.rowIndex="1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="exportDBButton" mnemonicParsing="false" onAction="#exportDBAction" prefHeight="70.0" prefWidth="200.0" text="Export Database" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="exitButton" mnemonicParsing="false" prefHeight="70.0" prefWidth="200.0" text="EXIT" textFill="RED" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+         </children>
+         <VBox.margin>
+            <Insets top="90.0" />
+         </VBox.margin>
+      </GridPane>
+      <Button fx:id="aboutButton" alignment="CENTER" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" text="About Project">
+         <VBox.margin>
+            <Insets left="900.0" />
+         </VBox.margin>
+      </Button>
+   </children>
+</VBox>
