@@ -9,10 +9,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.asstmngm.assetmanagement.LoginController">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="720.0" style="-fx-background-color: #282828;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.asstmngm.assetmanagement.LoginController">
    <children>
-      <Label fx:id="loginLabel" style="-fx-font-weight: bold;" text="Login" textAlignment="CENTER">
+      <Label fx:id="loginLabel" style="-fx-font-weight: bold;" text="Login" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="36.0" />
          </font>
@@ -20,8 +21,8 @@
             <Insets />
          </VBox.margin>
       </Label>
-      <Line fx:id="loginLine" endX="100.0" startX="-100.0" />
-      <Label fx:id="userNameLabel" text="Username">
+      <Line fx:id="loginLine" endX="100.0" startX="-100.0" stroke="#656262" />
+      <Label fx:id="userNameLabel" text="Username" textFill="WHITE">
          <VBox.margin>
             <Insets bottom="20.0" top="30.0" />
          </VBox.margin>
@@ -29,27 +30,48 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="userNameTextField" maxWidth="250.0">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </TextField>
-      <Label fx:id="passwordLabel" text="Password">
+      <HBox alignment="CENTER" prefWidth="200.0">
+         <children>
+            <FontIcon iconColor="WHITE" iconLiteral="far-user" iconSize="25">
+               <HBox.margin>
+                  <Insets left="-25.0" right="20.0" />
+               </HBox.margin>
+            </FontIcon>
+            <TextField fx:id="userNameTextField" maxWidth="250.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+         </children>
+         <VBox.margin>
+            <Insets bottom="10.0" />
+         </VBox.margin>
+      </HBox>
+      <Label fx:id="passwordLabel" text="Password" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
          <VBox.margin>
-            <Insets bottom="20.0" top="30.0" />
+            <Insets bottom="20.0" />
          </VBox.margin>
       </Label>
-      <PasswordField fx:id="passwordTextField" maxWidth="250.0">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </PasswordField>
+      <HBox alignment="CENTER" prefWidth="200.0">
+         <children>
+            <FontIcon iconColor="WHITE" iconLiteral="fas-key" iconSize="25">
+               <HBox.margin>
+                  <Insets left="-35.0" right="25.0" />
+               </HBox.margin>
+            </FontIcon>
+            <PasswordField fx:id="passwordTextField" maxWidth="250.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </PasswordField>
+         </children>
+      </HBox>
       <HBox alignment="CENTER" prefHeight="86.0" prefWidth="720.0">
          <children>
-            <Button fx:id="loginButton" mnemonicParsing="false" onAction="#loginButtonAction" prefHeight="39.0" prefWidth="153.0" text="SUBMIT" textFill="#00ff6a">
+            <Button fx:id="loginButton" mnemonicParsing="false" onAction="#loginButtonAction" prefHeight="39.0" prefWidth="153.0" style="-fx-background-color: #4169E1;" text="SUBMIT" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
@@ -57,7 +79,7 @@
                   <Insets right="40.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="exitButton" mnemonicParsing="false" prefHeight="39.0" prefWidth="153.0" text="EXIT" textFill="#ff0000">
+            <Button fx:id="exitButton" mnemonicParsing="false" onAction="#onExitAction" prefHeight="39.0" prefWidth="153.0" style="-fx-background-color: #4169E1;" text="EXIT" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>

@@ -1,5 +1,6 @@
 package com.asstmngm.assetmanagement;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -52,5 +53,10 @@ public class OperationsController {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+    }
+
+    @FXML
+    private void onExitAction(ActionEvent event) {
+        Platform.exit();
     }
 }

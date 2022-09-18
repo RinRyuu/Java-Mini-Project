@@ -9,11 +9,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.asstmngm.assetmanagement.NewEntryController">
     <children>
         <HBox alignment="CENTER" prefHeight="96.0" prefWidth="1080.0">
             <children>
-                <TextField prefHeight="35.0" prefWidth="121.0" promptText="Sr">
+                <TextField fx:id="srNo" prefHeight="35.0" prefWidth="121.0" promptText="Sr">
                     <HBox.margin>
                         <Insets left="20.0" right="60.0" />
                     </HBox.margin>
@@ -21,7 +21,7 @@
                         <Font size="18.0" />
                     </font>
                 </TextField>
-                <TextField prefHeight="35.0" prefWidth="121.0" promptText="ID">
+                <TextField fx:id="idNo" prefHeight="35.0" prefWidth="121.0" promptText="ID">
                     <HBox.margin>
                         <Insets right="60.0" />
                     </HBox.margin>
@@ -29,7 +29,7 @@
                         <Font size="18.0" />
                     </font>
                 </TextField>
-                <TextField prefHeight="35.0" prefWidth="121.0" promptText="Purchase Date">
+                <TextField fx:id="purchaseDate" prefHeight="35.0" prefWidth="121.0" promptText="Purchase Date">
                     <HBox.margin>
                         <Insets right="60.0" />
                     </HBox.margin>
@@ -37,7 +37,7 @@
                         <Font size="18.0" />
                     </font>
                 </TextField>
-                <TextField prefHeight="35.0" prefWidth="121.0" promptText="Type">
+                <TextField fx:id="type" prefHeight="35.0" prefWidth="121.0" promptText="Type">
                     <HBox.margin>
                         <Insets right="60.0" />
                     </HBox.margin>
@@ -45,7 +45,7 @@
                         <Font size="18.0" />
                     </font>
                 </TextField>
-                <TextField prefHeight="35.0" prefWidth="121.0" promptText="Price">
+                <TextField fx:id="price" prefHeight="35.0" prefWidth="121.0" promptText="Price">
                     <HBox.margin>
                         <Insets right="60.0" />
                     </HBox.margin>
@@ -53,7 +53,7 @@
                         <Font size="18.0" />
                     </font>
                 </TextField>
-                <TextField prefHeight="35.0" prefWidth="121.0" promptText="Status">
+                <TextField fx:id="status" prefHeight="35.0" prefWidth="121.0" promptText="Status">
                     <HBox.margin>
                         <Insets right="20.0" />
                     </HBox.margin>
@@ -64,14 +64,30 @@
             </children></HBox>
         <HBox alignment="CENTER" prefHeight="75.0" prefWidth="1080.0">
             <children>
-                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="300.0" text="Append Entry">
+                <Button fx:id="backButton" mnemonicParsing="false" onAction="#onBackAction" prefHeight="50.0" prefWidth="300.0" text="BACK">
                     <font>
                         <Font size="18.0" />
                     </font>
                     <HBox.margin>
-                        <Insets />
+                        <Insets left="20.0" right="40.0" />
                     </HBox.margin>
                 </Button>
+            <Button fx:id="appendButton" mnemonicParsing="false" onAction="#onAppendAction" prefHeight="50.0" prefWidth="300.0" text="APPEND ENTRY">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="20.0" right="20.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="exitButton" mnemonicParsing="false" onAction="#onExitAction" prefHeight="50.0" prefWidth="300.0" text="EXIT" textFill="RED">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="40.0" right="20.0" />
+               </HBox.margin>
+            </Button>
             </children>
         </HBox>
         <TableView prefHeight="550.0" prefWidth="1080.0">

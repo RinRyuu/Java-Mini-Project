@@ -9,16 +9,16 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.asstmngm.assetmanagement.OperationsController">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="720.0" style="-fx-background-color: #282828;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.asstmngm.assetmanagement.OperationsController">
    <children>
       <HBox alignment="CENTER" prefHeight="63.0" prefWidth="720.0">
          <children>
-            <RadioButton fx:id="createDBButton" mnemonicParsing="false" text="Create New Database" textAlignment="CENTER">
+            <RadioButton fx:id="createDBButton" mnemonicParsing="false" text="Create New Database" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font size="16.0" />
                </font>
             </RadioButton>
-            <RadioButton fx:id="useDBButton" mnemonicParsing="false" selected="true" text="Use Exsisting Database" textAlignment="CENTER">
+            <RadioButton fx:id="useDBButton" mnemonicParsing="false" selected="true" text="Use Exsisting Database" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font size="16.0" />
                </font>
@@ -31,7 +31,7 @@
             <Insets top="-20.0" />
          </VBox.margin>
       </HBox>
-      <Label fx:id="dbNameLabel" text="Database Name">
+      <Label fx:id="dbNameLabel" text="Database Name" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
@@ -47,7 +47,7 @@
             <Insets bottom="30.0" />
          </VBox.margin>
       </TextField>
-      <Label fx:id="tabelLabel" text="Tabel Name">
+      <Label fx:id="tabelLabel" text="Tabel Name" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
@@ -63,12 +63,12 @@
             <Insets bottom="50.0" />
          </VBox.margin>
       </TextField>
-      <Button fx:id="okButton" mnemonicParsing="false" onAction="#onDBSelected" prefHeight="25.0" prefWidth="113.0" text="OK" textFill="#00ff6a">
+      <Button fx:id="okButton" mnemonicParsing="false" onAction="#onDBSelected" prefHeight="25.0" prefWidth="113.0" style="-fx-background-color: #4169E1;" text="OK" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="exitButton" mnemonicParsing="false" prefHeight="39.0" prefWidth="113.0" text="EXIT" textFill="RED">
+      <Button fx:id="exitButton" mnemonicParsing="false" onAction="#onExitAction" prefHeight="39.0" prefWidth="113.0" style="-fx-background-color: #4169E1;" text="EXIT" textFill="WHITE">
          <VBox.margin>
             <Insets top="25.0" />
          </VBox.margin>

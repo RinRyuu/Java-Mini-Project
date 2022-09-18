@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.asstmngm.assetmanagement.MenuController">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: #282828;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.asstmngm.assetmanagement.MenuController">
    <children>
-      <Label fx:id="logoLabel" text="ASSET MANAGEMENT SYSTEM">
+      <Label fx:id="logoLabel" text="ASSET MANAGEMENT SYSTEM" textFill="WHITE">
          <font>
             <Font size="50.0" />
          </font>
@@ -30,30 +30,30 @@
             <RowConstraints maxHeight="150.0" minHeight="10.0" prefHeight="140.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="displayEntryButton" mnemonicParsing="false" onAction="#displayEntryButtonAction" prefHeight="70.0" prefWidth="200.0" text="Display Entries">
+            <Button fx:id="displayEntryButton" mnemonicParsing="false" onAction="#displayEntryButtonAction" prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #4169E1;" text="Display Entries" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font></Button>
-            <Button fx:id="newEntryButton" mnemonicParsing="false" onAction="#newEntryButtonAction" prefHeight="70.0" prefWidth="200.0" text="New Entry" GridPane.columnIndex="1">
+            <Button fx:id="newEntryButton" mnemonicParsing="false" onAction="#newEntryButtonAction" prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #4169E1;" text="New Entry" textFill="WHITE" GridPane.columnIndex="1">
                <font>
                   <Font size="18.0" />
                </font></Button>
-            <Button fx:id="deleteEntryButton" mnemonicParsing="false" onAction="#deleteEntryButtonAction" prefHeight="70.0" prefWidth="200.0" text="Delete Entry" GridPane.columnIndex="2">
+            <Button fx:id="deleteEntryButton" mnemonicParsing="false" onAction="#deleteEntryButtonAction" prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #4169E1;" text="Delete Entry" textFill="WHITE" GridPane.columnIndex="2">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button fx:id="searchEntryButton" mnemonicParsing="false" onAction="#searchEntryButtonAction" prefHeight="70.0" prefWidth="200.0" text="Search Entries" GridPane.rowIndex="1">
+            <Button fx:id="searchEntryButton" mnemonicParsing="false" onAction="#searchEntryButtonAction" prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #4169E1;" text="Search Entries" textFill="WHITE" GridPane.rowIndex="1">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button fx:id="exportDBButton" mnemonicParsing="false" onAction="#exportDBAction" prefHeight="70.0" prefWidth="200.0" text="Export Database" GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <Button fx:id="exportDBButton" mnemonicParsing="false" onAction="#exportDBAction" prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #4169E1;" text="Export Database" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="1">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button fx:id="exitButton" mnemonicParsing="false" prefHeight="70.0" prefWidth="200.0" text="EXIT" textFill="RED" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Button fx:id="exitButton" mnemonicParsing="false" onAction="#onExitAction" prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: RED;" text="EXIT" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <font>
                   <Font size="18.0" />
                </font>
@@ -63,7 +63,7 @@
             <Insets top="90.0" />
          </VBox.margin>
       </GridPane>
-      <Button fx:id="aboutButton" alignment="CENTER" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" text="About Project">
+      <Button fx:id="aboutButton" alignment="CENTER" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: #4169E1;" text="About Project" textFill="WHITE">
          <VBox.margin>
             <Insets left="900.0" />
          </VBox.margin>
