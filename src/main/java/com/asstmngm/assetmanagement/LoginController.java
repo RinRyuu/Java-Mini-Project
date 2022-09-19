@@ -77,27 +77,43 @@ public class LoginController {
                 failedLogin();
             } else {
                 String query = "SELECT * FROM user_auth WHERE userName = ? AND password = ?";
+                String forUName = "SELECT userName FROM user_auth WHERE userName = ?";
+                String forPass = "SELECT password FROM user_auth WHERE password = ?";
                 DatabaseConnection databaseConnection = new DatabaseConnection();
                 Connection connection = databaseConnection.getConnection();
                 PreparedStatement preparedStatement = connection.prepareStatement(query);
+                PreparedStatement preparedSForUName = connection.prepareStatement(forUName);
+                PreparedStatement preparedSForPass = connection.prepareStatement(forPass);
                 preparedStatement.setString(1, uName);
                 preparedStatement.setString(2, passWord);
-
+                preparedSForUName.setString(1, uName);
+                preparedSForPass.setString(1, passWord);
                 ResultSet resultSet = preparedStatement.executeQuery();
+                ResultSet resultSetForUName = preparedSForUName.executeQuery();
+                ResultSet resultSetForPass = preparedSForPass.executeQuery();
 
-                if(uName.isEmpty() || passWord.isEmpty()) {
-                    failedLogin();
-                } else {
-                    while(resultSet.next()) {
-                        if(resultSet.getString("userName").equals(uName) && resultSet.getString("password").equals(passWord)) {
-                            loadOperations(event);
-                        }
+                if(!resultSet.next()) {
+                    if(!resultSetForUName.next()) {
+                        sendToDB();
+                        loadOperations(event);
+                    } else {
+                        wrongPass();
                     }
+                } else if(resultSet.getString("userName").equals(uName) && resultSet.getString("password").equals(passWord)) {
+                    loadOperations(event);
+                } else {
+                    wrongCreds();
                 }
             }
         } catch (Exception e) {
             e.printStackTrace();
             e.getCause();
+        } finally {
+            try {
+                connectDB.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -112,8 +128,8 @@ public class LoginController {
     private void wrongCreds() {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Error");
-        alert.setHeaderText("You Cannot Take This Username");
-        alert.setContentText("Username Already Exists!");
+        alert.setHeaderText("Wrong Credentials!");
+        alert.setContentText("Username Or Password Is Incorrect!");
         alert.showAndWait();
     }
 

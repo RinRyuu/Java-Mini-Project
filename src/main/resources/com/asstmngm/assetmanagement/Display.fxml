@@ -12,12 +12,12 @@
    <children>
       <TableView id="dataTable" prefHeight="620.0" prefWidth="1080.0" style="-fx-background-color: #282828; -fx-text-fill: WHITE;">
         <columns>
-            <TableColumn id="dataSR" maxWidth="180.0" minWidth="-1.0" prefWidth="180.0" style="-fx-background-color: #4169E1;" text="Sr" />
-          <TableColumn id="dataID" maxWidth="180.0" minWidth="-1.0" prefWidth="180.0" style="-fx-background-color: #4169E1;" text="ID" />
-          <TableColumn id="dataPD" maxWidth="180.0" minWidth="-1.0" prefWidth="180.0" style="-fx-background-color: #4169E1;" text="Purchase Date" />
-            <TableColumn id="dataType" maxWidth="180.0" minWidth="-1.0" prefWidth="180.0" style="-fx-background-color: #4169E1;" text="Type" />
-            <TableColumn id="dataPrice" maxWidth="180.0" minWidth="-1.0" prefWidth="180.0" style="-fx-background-color: #4169E1;" text="Price" />
-            <TableColumn id="dataStatus" maxWidth="180.0" minWidth="-1.0" prefWidth="180.0" style="-fx-background-color: #4169E1;" text="Status" />
+            <TableColumn id="dataSR" maxWidth="180.0" minWidth="-1.0" prefWidth="180.0" text="Sr" />
+          <TableColumn id="dataID" maxWidth="180.0" minWidth="-1.0" prefWidth="180.0" text="ID" />
+          <TableColumn id="dataPD" maxWidth="180.0" minWidth="-1.0" prefWidth="180.0" text="Purchase Date" />
+            <TableColumn id="dataType" maxWidth="180.0" minWidth="-1.0" prefWidth="180.0" text="Type" />
+            <TableColumn id="dataPrice" maxWidth="180.0" minWidth="-1.0" prefWidth="180.0" text="Price" />
+            <TableColumn id="dataStatus" maxWidth="180.0" minWidth="-1.0" prefWidth="180.0" text="Status" />
         </columns>
       </TableView>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">

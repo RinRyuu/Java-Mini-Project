@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -13,12 +14,15 @@
    <children>
       <HBox alignment="CENTER" prefHeight="63.0" prefWidth="720.0">
          <children>
-            <RadioButton fx:id="createDBButton" mnemonicParsing="false" text="Create New Database" textAlignment="CENTER" textFill="WHITE">
+            <RadioButton fx:id="createDBButton" mnemonicParsing="false" onAction="#onDBSelected" text="Create New Database" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font size="16.0" />
                </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="dbSelection" />
+               </toggleGroup>
             </RadioButton>
-            <RadioButton fx:id="useDBButton" mnemonicParsing="false" selected="true" text="Use Exsisting Database" textAlignment="CENTER" textFill="WHITE">
+            <RadioButton fx:id="useDBButton" mnemonicParsing="false" onAction="#onDBSelected" selected="true" text="Use Exsisting Database" textAlignment="CENTER" textFill="WHITE" toggleGroup="$dbSelection">
                <font>
                   <Font size="16.0" />
                </font>
@@ -55,7 +59,7 @@
             <Insets bottom="20.0" />
          </VBox.margin>
       </Label>
-      <TextField fx:id="tabelTextField" maxWidth="250.0">
+      <TextField fx:id="tableTextField" maxWidth="250.0">
          <font>
             <Font size="18.0" />
          </font>

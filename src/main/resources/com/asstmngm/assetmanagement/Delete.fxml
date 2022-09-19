@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.asstmngm.assetmanagement.DeleteEntryController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: #282828;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.asstmngm.assetmanagement.DeleteEntryController">
     <children>
         <HBox alignment="CENTER" prefHeight="96.0" prefWidth="1080.0">
             <children>
@@ -64,7 +64,7 @@
             </children></HBox>
         <HBox alignment="CENTER" prefHeight="75.0" prefWidth="1080.0">
             <children>
-                <Button fx:id="searchButton" mnemonicParsing="false" onAction="#onSearchAction" prefHeight="50.0" prefWidth="300.0" text="SEARCH">
+                <Button fx:id="searchButton" mnemonicParsing="false" onAction="#onSearchAction" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: #4169E1;" text="SEARCH" textFill="WHITE">
                     <font>
                         <Font size="18.0" />
                     </font>
@@ -72,7 +72,7 @@
                         <Insets left="15.0" right="30.0" />
                     </HBox.margin>
                 </Button>
-            <Button fx:id="backButton" mnemonicParsing="false" onAction="#onBackAction" prefHeight="50.0" prefWidth="160.0" text="BACK">
+            <Button fx:id="backButton" mnemonicParsing="false" onAction="#onBackAction" prefHeight="50.0" prefWidth="160.0" style="-fx-background-color: #4169E1;" text="BACK" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
@@ -80,12 +80,12 @@
                   <Insets right="30.0" />
                </HBox.margin>
             </Button>
-                <Button fx:id="exitButton" mnemonicParsing="false" onAction="#onExitAction" prefHeight="50.0" prefWidth="160.0" text="EXIT" textFill="RED">
+                <Button fx:id="exitButton" mnemonicParsing="false" onAction="#onExitAction" prefHeight="50.0" prefWidth="160.0" style="-fx-background-color: RED;" text="EXIT" textFill="WHITE">
                     <font>
                         <Font size="18.0" />
                     </font>
                 </Button>
-            <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#onDeleteAction" prefHeight="50.0" prefWidth="300.0" text="DELETE ENTRY">
+            <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#onDeleteAction" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: #4169E1;" text="DELETE ENTRY" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
@@ -95,7 +95,7 @@
             </Button>
             </children>
         </HBox>
-        <TableView prefHeight="550.0" prefWidth="1080.0">
+        <TableView prefHeight="550.0" prefWidth="1080.0" style="-fx-background-color: #282828;">
             <columns>
                 <TableColumn maxWidth="180.0" minWidth="-1.0" prefWidth="180.0" text="Sr" />
                 <TableColumn maxWidth="180.0" minWidth="-1.0" prefWidth="180.0" text="ID" />
