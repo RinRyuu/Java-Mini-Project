@@ -53,20 +53,20 @@ public class OperationsController {
         String dbName = dbNameTextField.getText();
         String tableName = tableTextField.getText();
         try {
-            if(dbName.isEmpty() || tableName.isEmpty()) {
+            if(dbName.isEmpty()) {
                 emptyFieldsAlert();
             } else {
-                String newDB = "CREATE SCHEMA ?" ;
-                String newTable = "'CREATE TABLE ?. ? (Sr INT NOT NULL AUTO_INCREMENT, ID VARCHAR(45) NOT NULL, PurchaseDate DATE NOT NULL, Type VARCHAR(45) NOT NULL, Price INT NOT NULL, Status VARCHAR(45) NOT NULL)'";
+                String newDB = "CREATE DATABASE ?" ;
+//                String newTable = "'CREATE TABLE ?. ? (Sr INT NOT NULL AUTO_INCREMENT, ID VARCHAR(45) NOT NULL, PurchaseDate DATE NOT NULL, Type VARCHAR(45) NOT NULL, Price INT NOT NULL, Status VARCHAR(45) NOT NULL)'";
                 DatabaseConnection dbConnection = new DatabaseConnection();
                 Connection connection = dbConnection.getConnection();
                 PreparedStatement newDBStatement = connection.prepareStatement(newDB);
-                PreparedStatement newTableStatement = connection.prepareStatement(newTable);
+//                PreparedStatement newTableStatement = connection.prepareStatement(newTable);
                 newDBStatement.setString(1, dbName);
-                newTableStatement.setString(1, dbName);
-                newTableStatement.setString(2, tableName);
+//                newTableStatement.setString(1, dbName);
+//                newTableStatement.setString(2, tableName);
                 newDBStatement.executeUpdate();
-                newTableStatement.executeUpdate();
+//                newTableStatement.executeUpdate();
                 connection.close();
             }
         } catch (Exception e) {
@@ -78,18 +78,20 @@ public class OperationsController {
     private void onDBSelected(ActionEvent event) throws IOException {
         String dbName = dbNameTextField.getText();
         String tableName = tableTextField.getText();
-        toNextPage(event);
-//        if(createDBButton.isSelected()) {
-//            System.out.println("Create DB");
-////            createDB();
-//            toNextPage(event);
-//        } else if(useDBButton.isSelected()) {
-//            System.out.println("Use DB");
-//            getDB();
-//        } else {
-//            noDBSelectedAlert();
-//        }
 
+        try {
+            if(createDBButton.isSelected()) {
+                createDB();
+            } else if(useDBButton.isSelected()) {
+                getDB();
+            } else {
+                noDBSelectedAlert();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            toNextPage(event);
+        }
     }
 
     private void toNextPage(ActionEvent event) throws IOException {
