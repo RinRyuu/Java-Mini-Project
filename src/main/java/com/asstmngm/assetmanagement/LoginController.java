@@ -12,11 +12,14 @@ import javafx.scene.shape.Line;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.math.BigInteger;
+import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.BitSet;
 import java.util.Objects;
 
 public class LoginController {
@@ -59,14 +62,12 @@ public class LoginController {
 
 
         // use messageDigest to hash the password
-//        MessageDigest md = MessageDigest.getInstance("SHA-256");
-//        byte[] digest = md.digest();
-//        StringBuilder sb = new StringBuilder();
-//        BigInteger bigInt = new BigInteger(1, digest);
-//        passWord = bigInt.toString(16);
-//        uName = userNameTextField.getText();
-
         passWord = passwordTextField.getText();
+        MessageDigest md = MessageDigest.getInstance("MD5");
+        byte[] messageDigest = md.digest(passWord.getBytes());
+        BigInteger bigInt = new BigInteger(1, messageDigest);
+        passWord = bigInt.toString(8);
+
         uName = userNameTextField.getText();
 
         DatabaseConnection connectNow = new DatabaseConnection();
